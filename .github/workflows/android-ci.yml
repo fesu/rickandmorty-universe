@@ -23,7 +23,7 @@ jobs:
         with:
           distribution: 'zulu'
           java-version: '17'
-          cache: 'gradle' # Automatically caches gradle dependencies to speed up future builds
+          cache: 'gradle'
 
       # Step 3: Grant execute permission for the Gradle wrapper script
       - name: Grant Execute Permission for Gradlew
@@ -43,7 +43,7 @@ jobs:
         with:
           name: rick-and-morty-debug-apk
           path: app/build/outputs/apk/debug/app-debug.apk
-          retention-days: 7 # Kept for 7 days before auto-deletion
+          retention-days: 7
 
       # Step 7: Upload the generated AAB (App Bundle)
       - name: Upload AAB Artifact
@@ -52,3 +52,11 @@ jobs:
           name: rick-and-morty-debug-aab
           path: app/build/outputs/bundle/debug/app-debug.aab
           retention-days: 7
+
+      # Step 8: Distribute the APK to your Firebase Tester Group
+      - name: Upload to Firebase App Distribution
+        uses: w9jds/firebase-action@v2.2.2
+        with:
+          args: appdistribution:distribute app/build/outputs/apk/debug/app-debug.apk --app ${{ secrets.FIREBASE_APP_ID }} --groups "qa-testers"
+        env:
+          FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
