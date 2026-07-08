@@ -1,0 +1,35 @@
+Privacy Policy
+
+Last Updated: July 8, 2026
+
+This privacy policy governs your use of the software application Rick & Morty Multiverse Explorer ("Application") for mobile devices, which was created as an open-source architectural reference application.
+The Application provides users with an offline-first experience to browse, search, and view character data retrieved from the open-source Rick and Morty API.
+
+1. Information Collection and Use
+Personal Information
+The Application does not collect, harvest, store, or transmit any personally identifiable information (PII). You are not required to create an account, log in, or provide any personal details (such as name, email address, phone number, or precise location) to use the Application.
+Non-Personal & Automatically Collected Information
+The Application handles data in the following automated manners to function correctly:
+•	Network Access: The Application makes standard HTTP requests to the public, open-source Rick and Morty API ([https://rickandmortyapi.com](https://rickandmortyapi.com)) to retrieve character data. No user-specific tokens or tracking identifiers are appended to these network requests.
+•	Local Storage (Room Database): To provide offline-first capabilities, the data retrieved from the public API is cached locally on your device's internal storage using a secure SQLite/Room database structure. This data remains strictly on your device and is never transmitted to third parties or external servers.
+
+2. Third-Party Services
+The Application interacts with the public Rick and Morty API. While the Application itself does not collect tracking data, the third-party infrastructure hosting the open-source API may log standard infrastructure telemetry (such as IP addresses and request timestamps) common to web server traffic. We encourage you to review the operational guidelines of open-source API platforms if you have infrastructure-level traffic questions.
+
+3. Children's Privacy
+The Application does not knowingly collect or solicit data from anyone, including children under the age of 13. Because the Application collects zero personal information, it is inherently compliant with the Children's Online Privacy Protection Act (COPPA).
+
+4. Permissions Required
+The Application requests minimal standard permissions required for its basic operations:
+•	INTERNET: Required to fetch character data from the open-source API.
+•	ACCESS_NETWORK_STATE: Required to determine if the device has an active internet connection to intelligently decide whether to serve data from the local database cache or fetch fresh content from the API.
+
+5. Security
+We value your trust. Even though the Application does not handle personal data, all network interactions are strictly performed over encrypted HTTPS channels to prevent traffic tampering or eavesdropping.
+
+6. Changes to This Privacy Policy
+We may update our Privacy Policy from time to time. You are advised to review this page periodically for any changes. Changes to this Privacy Policy are effective immediately when they are posted on this page.
+
+7. Contact Us
+If you have any questions or suggestions regarding this Privacy Policy, please feel free to open an issue or reach out via the repository contact details at:
+•	GitHub Repository: https://github.com/fesu/rickandmorty-universe

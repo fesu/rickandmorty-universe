@@ -3,9 +3,9 @@ name: Android CI/CD Pipeline
 # Controls when the workflow will run
 on:
   push:
-    branches: [ "main", "master" ]
+    branches: [ "main" ]
   pull_request:
-    branches: [ "main", "master" ]
+    branches: [ "main" ]
 
 jobs:
   build:
